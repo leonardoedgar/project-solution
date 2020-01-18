@@ -6,14 +6,20 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "concurrently": "^5.0.2",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-scripts": "3.3.0"
+    "react-scripts": "3.3.0",
+    "redux": "^4.0.5"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start-server": "nodemon server/server.js server/server.js",
+    "start-client": "react-scripts start",
+    "start-dev": "concurrently \"yarn start-server\" \"yarn start-client\"",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest tests",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -30,5 +36,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "proxy": "http://localhost:4000",
+  "devDependencies": {
+    "@babel/cli": "^7.8.3",
+    "@babel/core": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "jest": "^24.9.0",
+    "supertest": "^4.0.2"
   }
 }
