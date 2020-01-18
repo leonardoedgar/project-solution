@@ -15,10 +15,10 @@ const updateBee = (content) => {
   }
 };
 
-const deleteBee = (id) => {
+const deleteBee = (content) => {
   return {
     type: DELETE_BEE_CHANNEL,
-    content: id
+    content: content
   }
 };
 

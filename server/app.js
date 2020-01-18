@@ -1,5 +1,5 @@
 const express = require('express');
-const store = require('./store');
+const backEndStore = require('./store');
 const {registerBee, updateBee, deleteBee, getAllBees} = require('./actions');
 const app = express();
 
@@ -10,7 +10,7 @@ app.use(express.json());
  * Implementation of POST API
  */
 app.post(routeAddress, function (req, res) {
-  store.dispatch(registerBee(req.body));
+  backEndStore.dispatch(registerBee(req.body));
   res.send();
 });
 
@@ -18,7 +18,7 @@ app.post(routeAddress, function (req, res) {
  * Implementation of DELETE API
  */
 app.delete(routeAddress, function(req, res) {
-  store.dispatch(deleteBee(req.body));
+  backEndStore.dispatch(deleteBee(req.body));
   res.send();
 });
 
@@ -26,7 +26,7 @@ app.delete(routeAddress, function(req, res) {
  * Implementation of PUT API
  */
 app.put(routeAddress, function(req, res) {
-  store.dispatch(updateBee(req.body));
+  backEndStore.dispatch(updateBee(req.body));
   res.send();
 });
 
@@ -34,7 +34,7 @@ app.put(routeAddress, function(req, res) {
  * Implementation of GET API
  */
 app.get(routeAddress, function (req, res) {
-  res.send(store.getState());
+  res.send(backEndStore.getState());
 });
 
 module.exports = app;

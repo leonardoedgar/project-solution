@@ -8,7 +8,7 @@ const apiReducer = (prevState, action) => {
   switch(action.type) {
     case REGISTER_BEE_CHANNEL: return registerNewBeeToDatabase(prevState, action.content);
     case UPDATE_BEE_CHANNEL: return updateBeeDatabase(prevState, action.content);
-    case DELETE_BEE_CHANNEL: return deleteBee(prevState, action.id);
+    case DELETE_BEE_CHANNEL: return deleteBee(prevState, action.content);
     default: return prevState;
   }
 };
@@ -38,7 +38,7 @@ const updateBeeDatabase = (prevState, content) => {
 /**
  * A function to handle action for deleting bees.
  * @param prevState {Object} represents previous state of the redux store
- * @param id {Number} represents id of the bee to be deleted
+ * @param content {Number} represents id of the bee to be deleted
  */
 const deleteBee = (prevState, content) => {
   let {[content["id"]]: omit, ...newState} = prevState;
