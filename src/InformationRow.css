@@ -1,0 +1,13 @@
+.information-row {
+    display: flex;
+    border: 2px solid darkorange;
+    background: orange;
+    height: 85px;
+    width: 797px;
+    text-align: center;
+}
+
+.information-row-text {
+    margin: auto;
+    background: orange;
+}

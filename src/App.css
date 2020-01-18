@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url("./fonts/Roboto/Roboto-Regular.ttf");
+}
+
+* {
+    font-size: 18px;
+    font-family: Roboto, sans-serif;
+}
+
+html {
+    background: url("img/bee-background.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}

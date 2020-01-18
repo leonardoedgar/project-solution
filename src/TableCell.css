@@ -1,0 +1,13 @@
+.table-cell {
+    display: flex;
+    border: 2px solid darkorange;
+    background: orange;
+    height: 85px;
+    width: 85px;
+    text-align: center;
+}
+
+.table-cell-text {
+    margin: auto;
+    background: orange;
+}

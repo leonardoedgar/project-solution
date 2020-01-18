@@ -1,0 +1,6 @@
+.panel-bar-flex {
+    display: flex;
+    justify-content: space-between;
+    width: 666px;
+    margin: 50px auto;
+}

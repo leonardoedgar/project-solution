@@ -1,0 +1,15 @@
+.table-container {
+    grid-template-areas: 'table-title-row' 'bee-managers';
+}
+
+.table-tile-row {
+    grid-area: table-title-row;
+}
+
+.bee-managers {
+    grid-area: bee-managers;
+}
+
+.bee-manager-table-container {
+    margin: auto;
+}
