@@ -1,46 +1,55 @@
 import React from 'react';
-import TextBox from "./TextBox";
+import InputBox from "./InputBox";
 import './BeeRegistrationForm.css';
 
 const BeeRegistrationForm = () => {
   return (
     <div className="bee-registration-form">
       <form>
-        <TextBox
+        <InputBox
+          boxType="text"
           label="Id"
           name="id"
         />
-        <TextBox
+        <InputBox
+          boxType="number"
           label="Speed (m/s)"
           name="speed"
         />
-        <TextBox
+        <InputBox
+          boxType="number"
           label="Latitude (&#176;)"
           name="latitude"
         />
-        <TextBox
+        <InputBox
+          boxType="number"
           label="Longitude (&#176;)"
           name="longitude"
         />
-        <TextBox
+        <InputBox
+          boxType="number"
           label="Elevation (m)"
           name="elevation"
         />
-        <TextBox
+        <InputBox
+          boxType="number"
           label="Amount of Nectar (g)"
           name="nectar"
         />
-        <TextBox
+        <InputBox
+          boxType="number"
           label="Amount of Honey (g)"
           name="honey"
         />
-        <TextBox
+        <InputBox
+          boxType="number"
           label="Fuel (%)"
-          name="elevation"
+          name="fuel"
         />
-        <TextBox
+        <InputBox
+          boxType="number"
           label="Health (%)"
-          name="nectar"
+          name="health"
         />
       </form>
     </div>

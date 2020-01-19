@@ -1,13 +1,34 @@
 import React from 'react';
+import {connect} from 'react-redux'
 import TableRow from "./TableRow";
 import InformationRow from "./InformationRow";
-const BeeManager = () => {
+import {mapStateToProps} from "./Utility";
+
+const BeeManager = ({beeDatabase}) => {
+  const renderBeeDatabase = () => {
+    let beeToRender = [];
+    Object.entries(beeDatabase).forEach(([key, value]) =>
+      beeToRender.push(<TableRow
+        id = {key}
+        speed={value["speed"]}
+        latitude={value["latitude"]}
+        longitude={value["longitude"]}
+        elevation={value["elevation"]}
+        nectar={value["nectar"]}
+        honey={value["honey"]}
+        fuel={value["fuel"]}
+        health={value["health"]}
+      />));
+    return beeToRender;
+  };
   return (
     <span>
-      <TableRow/>
-      <InformationRow text="No bee robots deployed yet!"/>
+      {
+        Object.keys(beeDatabase).length === 0 && beeDatabase.constructor === Object?
+          <InformationRow text="No bee robots deployed yet!"/>:renderBeeDatabase()
+      }
     </span>
   );
 };
 
-export default BeeManager;
+export default connect(mapStateToProps, {})(BeeManager);
