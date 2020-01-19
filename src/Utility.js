@@ -25,7 +25,6 @@ export const isInputFormCompleted = (formType, currentData) => {
  * @param state {Object} the state of the Redux Store
  */
 export const mapStateToProps = (state) => {
-  console.log(state);
   return {
     modalWindow: state["modalWindow"],
     inputForms: state["inputForms"],
