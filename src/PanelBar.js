@@ -4,6 +4,10 @@ import {toggleModal} from './actions';
 import GUIButton from "./GUIButton";
 import './PanelBar.css';
 
+/**
+ * A functional component that represents the main panel in the App.
+ * @param toggleModal (function) to toggle the modal window
+ */
 const PanelBar = ({toggleModal}) => {
   return (
     <div className="panel-bar-flex">

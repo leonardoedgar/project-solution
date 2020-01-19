@@ -1,0 +1,11 @@
+.table-container {
+    grid-template-areas: 'table-title-row' 'content-row';
+}
+
+.table-tile-row {
+    grid-area: table-title-row;
+}
+
+.content-row {
+    grid-area: content-row;
+}

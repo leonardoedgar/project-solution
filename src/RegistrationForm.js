@@ -1,10 +1,13 @@
 import React from 'react';
 import InputBox from "./InputBox";
-import './BeeRegistrationForm.css';
+import './RegistrationForm.css';
 
-const BeeRegistrationForm = () => {
+/**
+ * A functional component that represents a registration form
+ */
+const RegistrationForm = () => {
   return (
-    <div className="bee-registration-form">
+    <div className="registration-form">
       <form>
         <InputBox
           boxType="text"
@@ -46,4 +49,4 @@ const BeeRegistrationForm = () => {
   );
 };
 
-export default BeeRegistrationForm;
+export default RegistrationForm;

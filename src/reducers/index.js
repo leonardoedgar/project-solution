@@ -33,7 +33,11 @@ export const frontEndReducer = (prevState, action) => {
     default: return prevState;
   }
 };
-
+/**
+ * A function to toggle modal window.
+ * @param prevState {Object} represents the previous state of the Store
+ * @param modalStateKey {string} represents the state key of the modal Window
+ */
 export const toggleModal = (prevState, modalStateKey) => {
   let newState = {...prevState};
   let prevModalState = {...prevState['modalWindow']};
@@ -41,6 +45,12 @@ export const toggleModal = (prevState, modalStateKey) => {
   return newState;
 };
 
+/**
+ * A function to update input form based on user's input.
+ * @param prevState {Object} represents the previous state of the Store
+ * @param beeAttribute {string} represents the bee's attribute that is modified
+ * @param newContent {string} represents the modified content
+ */
 export const updateInputForm = (prevState, beeAttribute, newContent) => {
   let newState = {...prevState};
   let prevBeeAttribute = {...prevState['inputForms']};

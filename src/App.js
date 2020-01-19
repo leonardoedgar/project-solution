@@ -1,21 +1,24 @@
 import React from 'react';
-import BeeManagerTable from "./BeeManagerTable";
+import Table from "./Table";
 import './App.css';
 import PanelBar from "./PanelBar";
 import Title from "./Title";
-import BeeRegistrationModal from "./BeeRegistrationModal";
-import BeeDeleteModal from "./BeeDeleteModal";
-import BeeUpdateModal from "./BeeUpdateModal";
+import RegistrationModal from "./RegistrationModal";
+import DeleteModal from "./DeleteModal";
+import UpdateModal from "./UpdateModal";
 
+/**
+ * The main Bee Robots Manager App.
+ */
 const App = () => {
   return (
     <div>
       <Title/>
       <PanelBar/>
-      <BeeManagerTable/>
-      <BeeRegistrationModal/>
-      <BeeUpdateModal/>
-      <BeeDeleteModal/>
+      <Table/>
+      <RegistrationModal/>
+      <UpdateModal/>
+      <DeleteModal/>
     </div>
   );
 };

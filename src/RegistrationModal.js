@@ -2,17 +2,26 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {toggleModal, clearInputForms, updateBeeDatabase} from './actions';
 import ModalWindow from "./ModalWindow";
-import BeeRegistrationForm from "./BeeRegistrationForm";
+import RegistrationForm from "./RegistrationForm";
 import {isInputFormCompleted, mapStateToProps} from './Utility';
 
-const BeeRegistrationModal = ({modalWindow, inputForms, toggleModal, clearInputForms, updateBeeDatabase}) => {
+/**
+ * A functional component that represents the registration modal window
+ * @param modalWindow {Object} represents the state of all modal windows
+ * @param inputForms {Object} represents the content of the form
+ * @param toggleModal {function} to toggle the modal window
+ * @param clearInputForms {function} to clear the form's content
+ * @param updateBeeDatabase {function} to update database from back-end data
+ */
+const RegistrationModal = ({modalWindow, inputForms, toggleModal, clearInputForms, updateBeeDatabase}) => {
   return (
     <ModalWindow
       title="Bee Registration"
       isOpen={modalWindow["registrationModalOpen"]}
     >
       <div>Enter new bee particulars</div>
-      <BeeRegistrationForm/>
+      <div>NOTE: Registering duplicate id will overwrite the old one</div>
+      <RegistrationForm/>
       <button
         className="modal-window-button"
         disabled={!isInputFormCompleted('registration', inputForms)}
@@ -44,4 +53,4 @@ const BeeRegistrationModal = ({modalWindow, inputForms, toggleModal, clearInputF
   );
 };
 
-export default connect(mapStateToProps, {toggleModal, clearInputForms, updateBeeDatabase})(BeeRegistrationModal);
+export default connect(mapStateToProps, {toggleModal, clearInputForms, updateBeeDatabase})(RegistrationModal);

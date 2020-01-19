@@ -1,3 +1,8 @@
+/**
+ * A function to know whether the input form is completed by the user or not.
+ * @param formType {string} indicates the type of form
+ * @param currentData {string} indicates the current data filled in the form
+ */
 export const isInputFormCompleted = (formType, currentData) => {
   if (formType === 'registration') {
     for (let [key, value] of Object.entries(currentData)) {
@@ -15,6 +20,10 @@ export const isInputFormCompleted = (formType, currentData) => {
   }
 };
 
+/**
+ * A function to map state from Redux Store to components' props
+ * @param state {Object} the state of the Redux Store
+ */
 export const mapStateToProps = (state) => {
   console.log(state);
   return {

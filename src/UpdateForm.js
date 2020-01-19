@@ -1,11 +1,17 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import BeeDropdownList from "./BeeDropdownList";
+import DropdownList from "./DropdownList";
 import {mapStateToProps} from "./Utility";
 import {updateInputForm} from './actions';
-import './BeeUpdateForm.css';
+import './UpdateForm.css';
 
-const BeeUpdateForm = ({beeDatabase, inputForms, updateInputForm}) => {
+/**
+ * A functional component that represents the update form.
+ * @param beeDatabase {Object} represents the data of the bee
+ * @param inputForms {Object} represents the content of the form
+ * @param updateInputForm {function} to call to update the content of the form based on user's input
+ */
+const UpdateForm = ({beeDatabase, inputForms, updateInputForm}) => {
   const renderRadioButtons = () => {
     if(Object.keys(beeDatabase).length !== 0 && beeDatabase.constructor === Object) {
       const validSelection = inputForms["id"] !== 'select' && inputForms["id"] !== undefined;
@@ -31,10 +37,10 @@ const BeeUpdateForm = ({beeDatabase, inputForms, updateInputForm}) => {
 
   return (
     <div>
-      <BeeDropdownList/>
+      <DropdownList/>
       {renderRadioButtons()}
     </div>
   );
 };
 
-export default connect(mapStateToProps, {updateInputForm})(BeeUpdateForm);
+export default connect(mapStateToProps, {updateInputForm})(UpdateForm);

@@ -1,9 +1,12 @@
 import React from 'react';
 import TableRow from "./TableRow";
-import BeeManager from "./BeeManager";
-import './BeeManagerTable.css';
+import ContentRowCreator from "./ContentRowCreator";
+import './Table.css';
 
-const BeeManagerTable = () => {
+/**
+ * A functional component that represents table on the UI.
+ */
+const Table = () => {
   return (
     <span>
       <span className="table-title-row">
@@ -20,11 +23,11 @@ const BeeManagerTable = () => {
           running="Running?"
         />
       </span>
-      <span className="bee-managers">
-        <BeeManager/>
+      <span className="content-row">
+        <ContentRowCreator/>
       </span>
     </span>
   );
 };
 
-export default BeeManagerTable;
+export default Table;

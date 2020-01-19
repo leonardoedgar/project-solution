@@ -3,16 +3,24 @@ import {connect} from 'react-redux';
 import {toggleModal, clearInputForms, updateBeeDatabase} from './actions';
 import ModalWindow from "./ModalWindow";
 import {isInputFormCompleted, mapStateToProps} from './Utility';
-import BeeUpdateForm from "./BeeUpdateForm";
+import UpdateForm from "./UpdateForm";
 
-const BeeUpdateModal = ({modalWindow, inputForms, toggleModal, clearInputForms, updateBeeDatabase}) => {
+/**
+ * A functional component that represents the update modal window.
+ * @param modalWindow {Object} represents the state of all modal windows in the App
+ * @param inputForms {Object} represents the content of the form
+ * @param toggleModal {function} to call to toggle the modal windwo
+ * @param clearInputForms {function} to call to clear the content of the form
+ * @param updateBeeDatabase {function} to update the store based on back-end data
+ */
+const UpdateModal = ({modalWindow, inputForms, toggleModal, clearInputForms, updateBeeDatabase}) => {
   return (
     <ModalWindow
       title="Bee Update"
       isOpen={modalWindow["updateModalOpen"]}
     >
       <div>Select Bee Id to Update</div>
-      <BeeUpdateForm/>
+      <UpdateForm/>
       <button
         className="modal-window-button"
         disabled={!isInputFormCompleted('update', inputForms)}
@@ -44,4 +52,4 @@ const BeeUpdateModal = ({modalWindow, inputForms, toggleModal, clearInputForms, 
   )
 };
 
-export default connect(mapStateToProps, {toggleModal, clearInputForms, updateBeeDatabase})(BeeUpdateModal);
+export default connect(mapStateToProps, {toggleModal, clearInputForms, updateBeeDatabase})(UpdateModal);

@@ -3,16 +3,24 @@ import {connect} from 'react-redux';
 import {toggleModal, clearInputForms, updateBeeDatabase} from './actions';
 import ModalWindow from "./ModalWindow";
 import {isInputFormCompleted, mapStateToProps} from './Utility';
-import BeeDeleteForm from "./BeeDropdownList";
+import DeleteForm from "./DropdownList";
 
-const BeeDeleteModal = ({modalWindow, inputForms, toggleModal, clearInputForms, updateBeeDatabase}) => {
+/**
+ * A modal window to remove bee from database.
+ * @param modalWindow {Object} represents the state of modalWindows in the App
+ * @param inputForms {Object} represents the content of input form
+ * @param toggleModal {function} to toggle modal window
+ * @param clearInputForms {function} to clear input forms' content
+ * @param updateBeeDatabase {function} to update nee database from back-end data
+ */
+const DeleteModal = ({modalWindow, inputForms, toggleModal, clearInputForms, updateBeeDatabase}) => {
   return (
     <ModalWindow
       title="Bee Removal"
       isOpen={modalWindow["deleteModalOpen"]}
     >
       <div>Select Bee Id to be removed</div>
-      <BeeDeleteForm/>
+      <DeleteForm/>
       <button
         className="modal-window-button"
         disabled={!isInputFormCompleted('delete', inputForms)}
@@ -44,4 +52,4 @@ const BeeDeleteModal = ({modalWindow, inputForms, toggleModal, clearInputForms, 
   );
 };
 
-export default connect(mapStateToProps, {toggleModal, clearInputForms, updateBeeDatabase})(BeeDeleteModal);
+export default connect(mapStateToProps, {toggleModal, clearInputForms, updateBeeDatabase})(DeleteModal);

@@ -4,7 +4,11 @@ import TableRow from "./TableRow";
 import InformationRow from "./InformationRow";
 import {mapStateToProps} from "./Utility";
 
-const BeeManager = ({beeDatabase}) => {
+/**
+ * A functional component to create table rows based on content in database.
+ * @param beeDatabase {Object} represents data of bees in the Store
+ */
+const ContentRowCreator = ({beeDatabase}) => {
   const renderBeeDatabase = () => {
     let beeToRender = [];
     Object.entries(beeDatabase).forEach(([key, value]) =>
@@ -33,4 +37,4 @@ const BeeManager = ({beeDatabase}) => {
   );
 };
 
-export default connect(mapStateToProps, {})(BeeManager);
+export default connect(mapStateToProps, {})(ContentRowCreator);
