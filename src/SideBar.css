@@ -1,0 +1,11 @@
+.side-bar {
+    position: relative;
+    height: 40px;
+    width: 886px;
+    margin: auto;
+    text-align: right;
+}
+
+.side-bar-text {
+    font-size: 16px;
+}

@@ -2,7 +2,7 @@
     grid-template-areas: 'table-title-row' 'content-row';
 }
 
-.table-tile-row {
+.table-title-row {
     grid-area: table-title-row;
 }
 

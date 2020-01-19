@@ -6,6 +6,7 @@ import Title from "./Title";
 import RegistrationModal from "./RegistrationModal";
 import DeleteModal from "./DeleteModal";
 import UpdateModal from "./UpdateModal";
+import SideBar from "./SideBar";
 
 /**
  * The main Bee Robots Manager App.
@@ -15,6 +16,7 @@ const App = () => {
     <div>
       <Title/>
       <PanelBar/>
+      <SideBar/>
       <Table/>
       <RegistrationModal/>
       <UpdateModal/>
