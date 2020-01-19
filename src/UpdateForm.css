@@ -1,3 +1,7 @@
 .radio-button {
     margin-bottom: 10px;
 }
+
+.radio-button-text:hover {
+    cursor: pointer;
+}

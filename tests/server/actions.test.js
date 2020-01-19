@@ -2,7 +2,7 @@ const {registerBee, updateBee, deleteBee, REGISTER_BEE_CHANNEL, UPDATE_BEE_CHANN
   DELETE_BEE_CHANNEL} = require('../../server/actions');
 
 describe('BackEnd Action Creators Test', () => {
-  it('Bee Registration Action Creators', () => {
+  it('Bee Registration Action Creator', () => {
       let content = {'id': 123, 'speed': 100, 'altitude': 200};
       let expectedAction = {
         type: REGISTER_BEE_CHANNEL,
@@ -11,7 +11,7 @@ describe('BackEnd Action Creators Test', () => {
       expect(registerBee(content)).toEqual(expectedAction);
   });
 
-  it('Bee Update Action Creators', () => {
+  it('Bee Update Action Creator', () => {
     let content = {'id': 20, 'speed': 10, 'altitude': 25};
     let expectedAction = {
       type: UPDATE_BEE_CHANNEL,
@@ -20,7 +20,7 @@ describe('BackEnd Action Creators Test', () => {
     expect(updateBee(content)).toEqual(expectedAction);
   });
 
-  it('Bee Delete Action Creators', () => {
+  it('Bee Delete Action Creator', () => {
     let content = {'id': 321};
     let expectedAction = {
       type: DELETE_BEE_CHANNEL,

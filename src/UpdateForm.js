@@ -25,11 +25,13 @@ const UpdateForm = ({beeDatabase, inputForms, updateInputForm}) => {
           <input type="radio" name="status" value="start" disabled={disableStartBtn}
                  onChange={(event) => updateInputForm('running', event.target.value)}
                  className="radio-button"
-          />Start Process
+                 id="start"
+          /><label htmlFor="start" className="radio-button-text">Start Process</label>
           <input type="radio" name="status" value="finish" disabled={disableFinishBtn}
                  onChange={(event) => updateInputForm('running', !event.target.value)}
                  className="radio-button"
-          />Finish Process
+                 id="finish"
+          /><label htmlFor="finish" className="radio-button-text">Finish Process</label>
         </div>
       );
     }

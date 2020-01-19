@@ -28,6 +28,7 @@ export const mapStateToProps = (state) => {
   return {
     modalWindow: state["modalWindow"],
     inputForms: state["inputForms"],
-    beeDatabase: state["beeDatabase"]
+    beeDatabase: state["beeDatabase"],
+    sortData: state["sort"]
   }
 };

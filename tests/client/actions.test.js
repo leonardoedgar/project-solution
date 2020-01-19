@@ -1,8 +1,9 @@
 const {TOGGLE_MODAL_CHANNEL, CLEAR_INPUT_FORMS_CHANNEL, UPDATE_INPUT_FORMS_CHANNEL,
-  toggleModal, clearInputForms, updateInputForm} = require('../../src/actions');
+  TOGGLE_SORT_DATABASE_CHANNEL, toggleModal, clearInputForms, updateInputForm,
+  toggleSortDatabase} = require('../../src/actions');
 
 describe('FrontEnd Action Creators Test', () => {
-  it('Toggle Modal Window Action Creators', () => {
+  it('Toggle Modal Window Action Creator', () => {
     let content = 'defaultModal';
     let expectedAction = {
       type: TOGGLE_MODAL_CHANNEL,
@@ -11,14 +12,14 @@ describe('FrontEnd Action Creators Test', () => {
     expect(toggleModal(content)).toEqual(expectedAction);
   });
 
-  it('Clear Input Forms Action Creators', () => {
+  it('Clear Input Forms Action Creator', () => {
     let expectedAction = {
       type: CLEAR_INPUT_FORMS_CHANNEL,
     };
     expect(clearInputForms()).toEqual(expectedAction);
   });
 
-  it('Update Input Forms Action Creators', () => {
+  it('Update Input Forms Action Creator', () => {
     let content = true, beeAttribute = 'running';
     let expectedAction = {
       type: UPDATE_INPUT_FORMS_CHANNEL,
@@ -26,5 +27,12 @@ describe('FrontEnd Action Creators Test', () => {
       content: content
     };
     expect(updateInputForm(beeAttribute, content)).toEqual(expectedAction);
+  });
+
+  it('Sort Database Action Creator', () => {
+    let expectedAction = {
+      type: TOGGLE_SORT_DATABASE_CHANNEL
+    };
+    expect(toggleSortDatabase()).toEqual(expectedAction);
   });
 });

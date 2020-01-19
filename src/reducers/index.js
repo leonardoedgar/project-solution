@@ -1,5 +1,7 @@
-import {TOGGLE_MODAL_CHANNEL, CLEAR_INPUT_FORMS_CHANNEL, UPDATE_INPUT_FORMS_CHANNEL,
-  UPDATE_BEE_DATABASE_CHANNEL} from '../actions'
+import {
+  TOGGLE_MODAL_CHANNEL, CLEAR_INPUT_FORMS_CHANNEL, UPDATE_INPUT_FORMS_CHANNEL,
+  UPDATE_BEE_DATABASE_CHANNEL, TOGGLE_SORT_DATABASE_CHANNEL
+} from '../actions'
 
 const defaultBeeParticulars = {
   id: undefined,
@@ -21,7 +23,8 @@ export const frontEndStore = {
     'deleteModalOpen': false
   },
   'inputForms': defaultBeeParticulars,
-  'beeDatabase': {}
+  'beeDatabase': {},
+  'sort': false
 };
 
 export const frontEndReducer = (prevState, action) => {
@@ -30,6 +33,7 @@ export const frontEndReducer = (prevState, action) => {
     case CLEAR_INPUT_FORMS_CHANNEL: return {...prevState, 'inputForms': defaultBeeParticulars};
     case UPDATE_INPUT_FORMS_CHANNEL: return updateInputForm(prevState, action.beeAttribute, action.content);
     case UPDATE_BEE_DATABASE_CHANNEL: return {...prevState, 'beeDatabase': action.content};
+    case TOGGLE_SORT_DATABASE_CHANNEL: return {...prevState, 'sort': !prevState['sort']};
     default: return prevState;
   }
 };

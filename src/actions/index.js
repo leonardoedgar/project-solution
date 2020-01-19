@@ -2,6 +2,7 @@ export const TOGGLE_MODAL_CHANNEL = 'TOGGLE_MODAL';
 export const CLEAR_INPUT_FORMS_CHANNEL = 'CLEAR_INPUT_FORMS';
 export const UPDATE_INPUT_FORMS_CHANNEL = 'UPDATE_INPUT_FORMS';
 export const UPDATE_BEE_DATABASE_CHANNEL = 'UPDATE_BEE_DATABASE';
+export const TOGGLE_SORT_DATABASE_CHANNEL = 'TOGGLE_SORT_DATABASE_CHANNEL';
 /**
  * Action creator to toggle Modal Window.
  * @param modalStateKey {string} indicates the state name of the modal window
@@ -53,3 +54,12 @@ export const updateBeeDatabase = () => {
       console.log("Failed to retrieve current state from Express API ", err);
   });
 }};
+
+/**
+ * Action creator to sort data in the database
+ */
+export const toggleSortDatabase = () => {
+  return {
+    type: TOGGLE_SORT_DATABASE_CHANNEL
+  }
+};
