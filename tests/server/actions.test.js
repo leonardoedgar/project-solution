@@ -1,7 +1,7 @@
 const {registerBee, updateBee, deleteBee, REGISTER_BEE_CHANNEL, UPDATE_BEE_CHANNEL,
-  DELETE_BEE_CHANNEL} = require('../server/actions');
+  DELETE_BEE_CHANNEL} = require('../../server/actions');
 
-describe('Action Creators Test', () => {
+describe('BackEnd Action Creators Test', () => {
   it('Bee Registration Action Creators', () => {
       let content = {'id': 123, 'speed': 100, 'altitude': 200};
       let expectedAction = {

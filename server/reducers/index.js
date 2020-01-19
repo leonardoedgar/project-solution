@@ -21,7 +21,8 @@ const apiReducer = (prevState, action) => {
 const registerNewBeeToDatabase = (prevState, content) => {
   let key = content["id"];
   delete content["id"];
-  return {...prevState, [key]: content};
+  let newContent = {...content, 'honey': 0, 'nectar': 0, 'running': false};
+  return {...prevState, [key]: newContent};
 };
 
 /**
@@ -30,9 +31,21 @@ const registerNewBeeToDatabase = (prevState, content) => {
  * @param content {Object} represents the new content of the bee to update
  */
 const updateBeeDatabase = (prevState, content) => {
-  let key = content["id"];
+  let id = content["id"];
   delete content["id"];
-  return {...prevState, [key]: content};
+  for (let [key, value] of Object.entries(content)) {
+    if (value === undefined) {
+      delete content[key];
+    }
+  }
+  if(content['running']) {
+    content["nectar"] = prevState[id]["nectar"] + prevState[id]["speed"]*2;
+  }
+  else {
+    content["honey"] = prevState[id]["honey"] + prevState[id]["nectar"]*0.5;
+    content["nectar"] = 0;
+  }
+  return {...prevState, [id]: {...prevState[id], ...content}};
 };
 
 /**

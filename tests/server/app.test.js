@@ -1,4 +1,4 @@
-const app = require('../server/app');
+const app = require('../../server/app');
 const supertest = require('supertest');
 const request = supertest(app);
 const testRoute = '/bee-manager';

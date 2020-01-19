@@ -9,6 +9,7 @@ const BeeManager = ({beeDatabase}) => {
     let beeToRender = [];
     Object.entries(beeDatabase).forEach(([key, value]) =>
       beeToRender.push(<TableRow
+        key={key}
         id = {key}
         speed={value["speed"]}
         latitude={value["latitude"]}
@@ -18,6 +19,7 @@ const BeeManager = ({beeDatabase}) => {
         honey={value["honey"]}
         fuel={value["fuel"]}
         health={value["health"]}
+        running={value["running"]?"Yes": "No"}
       />));
     return beeToRender;
   };

@@ -1,20 +1,14 @@
 export const isInputFormCompleted = (formType, currentData) => {
   if (formType === 'registration') {
-    for (let value of Object.values(currentData)) {
-      if (value === undefined) {
+    for (let [key, value] of Object.entries(currentData)) {
+      if ((value === undefined || value === '') && key !== 'nectar' && key !== 'honey' && key !== 'running') {
         return false;
       }
     }
     return true;
   }
   else if (formType === 'update') {
-    let noOfDefinedProps = 0;
-    Object.entries(currentData).forEach(([key, value]) => {
-      if (value !== undefined && key !== 'id') {
-        noOfDefinedProps += 1;
-      }
-    });
-    return currentData["id"] !== undefined && noOfDefinedProps!== 0;
+    return currentData["running"] !== undefined && currentData["id"] !== 'select';
   }
   else if (formType === 'delete') {
     return currentData["id"] !== undefined && currentData["id"] !== 'select';

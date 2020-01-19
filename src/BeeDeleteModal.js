@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {toggleModal, clearInputForms, updateBeeDatabase} from './actions';
 import ModalWindow from "./ModalWindow";
 import {isInputFormCompleted, mapStateToProps} from './Utility';
-import BeeDeleteForm from "./BeeDeleteForm";
+import BeeDeleteForm from "./BeeDropdownList";
 
 const BeeDeleteModal = ({modalWindow, inputForms, toggleModal, clearInputForms, updateBeeDatabase}) => {
   return (

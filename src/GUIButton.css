@@ -6,3 +6,18 @@
     border: 1px solid darkorange;
     cursor: pointer;
 }
+
+.main-button:hover {
+    background-color: rgba(179, 107, 0, 0.5);
+    animation: shadow-pulse 1s infinite;
+    box-shadow: 0 0 0 4em rgba(255, 255, 255, 0);
+}
+
+@keyframes shadow-pulse {
+    0% {
+        box-shadow: 0 0 0 0px rgba(179, 107, 0, 1);
+    }
+    100% {
+        box-shadow: 0 0 0 20px rgba(179, 107, 0, 0);
+    }
+}

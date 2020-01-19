@@ -17,6 +17,7 @@ const BeeManagerTable = () => {
           honey="Amount of Honey (g)"
           fuel="Fuel Remaining (%)"
           health="Health (%)"
+          running="Running?"
         />
       </span>
       <span className="bee-managers">

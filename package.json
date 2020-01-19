@@ -23,6 +23,7 @@
     "start-dev": "concurrently \"yarn start-server\" \"yarn start-client\"",
     "build": "react-scripts build",
     "test": "jest tests",
+    "lint": "eslint src server",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

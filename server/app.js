@@ -1,6 +1,6 @@
 const express = require('express');
 const backEndStore = require('./store');
-const {registerBee, updateBee, deleteBee, getAllBees} = require('./actions');
+const {registerBee, updateBee, deleteBee} = require('./actions');
 const app = express();
 
 const routeAddress = '/bee-manager';

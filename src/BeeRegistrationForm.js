@@ -33,16 +33,6 @@ const BeeRegistrationForm = () => {
         />
         <InputBox
           boxType="number"
-          label="Amount of Nectar (g)"
-          name="nectar"
-        />
-        <InputBox
-          boxType="number"
-          label="Amount of Honey (g)"
-          name="honey"
-        />
-        <InputBox
-          boxType="number"
           label="Fuel (%)"
           name="fuel"
         />

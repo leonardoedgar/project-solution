@@ -19,7 +19,7 @@ const BeeRegistrationModal = ({modalWindow, inputForms, toggleModal, clearInputF
         onClick={() => {
           toggleModal('registrationModalOpen');
           fetch('/bee-manager/', {
-            method: 'PUT',
+            method: 'POST',
             body: JSON.stringify(inputForms),
             headers: {
               "Content-type": "application/json; charset=UTF-8"

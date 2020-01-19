@@ -5,6 +5,7 @@ import PanelBar from "./PanelBar";
 import Title from "./Title";
 import BeeRegistrationModal from "./BeeRegistrationModal";
 import BeeDeleteModal from "./BeeDeleteModal";
+import BeeUpdateModal from "./BeeUpdateModal";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <PanelBar/>
       <BeeManagerTable/>
       <BeeRegistrationModal/>
+      <BeeUpdateModal/>
       <BeeDeleteModal/>
     </div>
   );
